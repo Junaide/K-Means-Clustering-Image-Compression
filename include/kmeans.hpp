@@ -6,13 +6,11 @@
 
 class KMeans {
 public:
-    // Constructor
-    KMeans(int clusters, int maxIterations = 100, float epsilon = 1e-2);
+    KMeans(int clusters, int maxIterations = 50, float epsilon = 1e-1);
 
-    // Method to perform clustering
     void fit(const cv::Mat& data);
 
-    // Getters for cluster assignments and centroids
+    
     cv::Mat getLabels() const;
     cv::Mat getCentroids() const;
 
@@ -32,7 +30,6 @@ private:
     // Centroids for each cluster
     cv::Mat centroids;
 
-    // Utility methods
     float euclideanDistance(const cv::Vec3f& a, const cv::Vec3f& b) const;
     void initializeCentroids(const cv::Mat& data);
     void assignClusters(const cv::Mat& data);
