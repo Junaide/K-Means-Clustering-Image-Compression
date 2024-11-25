@@ -6,7 +6,7 @@
 
 class KMeans {
 public:
-    KMeans(int clusters, int maxIterations = 50, float epsilon = 1e-1);
+    KMeans(int clusters, int maxIterations = 100, float epsilon = 1e-2);
 
     void fit(const cv::Mat& data);
 
@@ -34,7 +34,6 @@ private:
     void initializeCentroids(const cv::Mat& data);
     void assignClusters(const cv::Mat& data);
     void updateCentroids(const cv::Mat& data);
-    bool checkConvergence(const std::vector<cv::Vec3f>& oldCentroids) const;
 };
 
 #endif // KMEANS_HPP
